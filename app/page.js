@@ -175,7 +175,7 @@ export default function Home() {
     formData.append('jd_text', jdText);
     formData.append('resume', file);
     try {
-      const res = await fetch('http://localhost:8000/analyze', { method: 'POST', body: formData });
+      const res = await fetch('https://ai-job-assistant-gqjt.onrender.com/analyze', { method: 'POST', body: formData });
       const data = await res.json();
       if (data.success) setResult(data.gap_analysis);
       else setError(data.error || 'Something went wrong!');
